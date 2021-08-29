@@ -52,7 +52,7 @@ const AboutPage = () => {
                 With more than 12 years of experience in house-cleaning services,
                 G+H Cleaning was created as a family-owned business in Long Island.
                 We are specialized in residential cleaning and provide a wide range 
-                of services, whether you want a weekly or bi-weekly help, or just a 
+                of services, whether you want weekly or bi-weekly help, or just a 
                 one-time cleaning service. We will design your maid service around 
                 your needs.
             </Text>

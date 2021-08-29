@@ -12,7 +12,7 @@ const Hero = styled.div`
 `;
 
 const ImageWrapper = styled.div`
-    width: 47vw;
+    width: 40vw;
     height: 400px;
     position: relative;
     margin-right: 3vw;
@@ -36,7 +36,7 @@ const Subtitle = styled.h2`
     }
 `;
 
-const IMAGE_URL = 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80';
+const IMAGE_URL = 'https://images.unsplash.com/photo-1587767379172-4d3c6759572a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=943&q=80';
 
 const HomePage = () => (
     <Hero>
