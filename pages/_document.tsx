@@ -35,9 +35,9 @@ export default class CustomDocument extends Document {
                     <meta charSet="utf-8" />
                     <meta name="author" content="Maria Solano" />
                     <meta property="og:type" content="website" />
-                    {/* TODO: Add canonical url */}
+                    <link rel="canonical" href={process.env.SITE_URL} />
 
-                    {/* TODO: Add favicon */}
+                    {/* TODO: Add PWA stuff */}
 
                     {/* Main font */}
                     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,600&display=swap" rel="stylesheet" />
