@@ -5,6 +5,7 @@ import type { DefaultTheme } from 'styled-components';
 
 import Navbar from 'components/Navbar';
 import Footer from 'components/Footer';
+import PageContainer from 'components/PageContainer';
 
 const GlobalStyle = createGlobalStyle`
     ${normalize}
@@ -29,7 +30,9 @@ const App = (props: AppProps) => {
         <ThemeProvider theme={theme}>
             <GlobalStyle />
             <Navbar />
-            <Component { ...pageProps } />
+            <PageContainer>
+                <Component { ...pageProps } />
+            </PageContainer>
             <Footer />
         </ThemeProvider>
     );

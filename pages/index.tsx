@@ -9,7 +9,6 @@ const Hero = styled.div`
     align-items: center;
     width: 100vw;
     background-color: ${props => props.theme.colors.lightGreen};
-    margin-top: 90px;
 `;
 
 const ImageWrapper = styled.div`
@@ -37,7 +36,7 @@ const Subtitle = styled.h2`
     }
 `;
 
-const IMAGE_URL = 'https://images.unsplash.com/photo-1458966480358-a0ac42de0a7a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80';
+const IMAGE_URL = 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80';
 
 const HomePage = () => (
     <Hero>

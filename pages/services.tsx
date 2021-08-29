@@ -1,9 +1,10 @@
 import { v4 as uuid } from 'uuid';
 import styled from 'styled-components';
+import type { IconDefinition } from '@fortawesome/fontawesome-common-types';
 
-import type { Props as ServiceSectionProps } from 'components/ServiceSection';
+import { BREAKPOINTS } from 'global-constants';
 
-import ServiceSection from 'components/ServiceSection';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudSun } from '@fortawesome/free-solid-svg-icons/faCloudSun';
 import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
 import { faHouseUser } from '@fortawesome/free-solid-svg-icons/faHouseUser';
@@ -11,9 +12,79 @@ import { faUtensils } from '@fortawesome/free-solid-svg-icons/faUtensils';
 import { faBath } from '@fortawesome/free-solid-svg-icons/faBath';
 import { faBed } from '@fortawesome/free-solid-svg-icons/faBed';
 
-const Container = styled.div`
-    margin-top: 90px;
+const Section = styled.section`
+    display: flex;
+    width: 100vw;
 `;
+
+const IconBox = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: ${props => props.theme.colors.lightGreen};
+    width: 40vw;
+    min-height: 100%;
+
+    @media(max-width: ${BREAKPOINTS.md}) {
+        width: 30vw;
+    }
+`;
+
+const Icon = styled(FontAwesomeIcon)`
+    font-size: 6rem;
+    color: ${props => props.theme.colors.darkGreen};
+
+    @media(max-width: ${BREAKPOINTS.md}) {
+        font-size: 4rem;
+    }
+`;
+
+const ListBox = styled.div`
+    width: 60vw;
+    padding: 10px 40px;
+    box-sizing: border-box;
+
+    @media(max-width: ${BREAKPOINTS.md}) {
+        width: 70vw;
+    }
+
+    @media(max-width: ${BREAKPOINTS.sm}) {
+        padding: 10px 20px;
+    }
+`;
+
+const ServiceDescription = styled.p`
+    margin: 10px 0 1rem;
+    color: ${props => props.theme.colors.darkGreen};
+`;
+
+const ServiceTitle = styled.span`
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-right: 10px;
+`;
+
+const List = styled.ul`
+    padding: 0;
+    list-style-position: inside;
+    margin: 0;
+
+    @media(max-width: ${BREAKPOINTS.sm}) {
+        font-size: 0.9rem;
+    }
+`;
+
+const ListItem = styled.li`
+    margin: 5px 0;
+`;
+
+type ServiceSectionProps = {
+    title: string;
+    subtitle?: string;
+    services: string[]; 
+    icon: IconDefinition;
+    iconAlignment: 'left' | 'right';
+}
 
 const SECTIONS: ServiceSectionProps[] = [
     {
@@ -113,11 +184,26 @@ const SECTIONS: ServiceSectionProps[] = [
 ];
 
 const ServicesPage = () => (
-    <Container>
-        {SECTIONS.map(sectionProps => 
-            <ServiceSection key={uuid()} { ...sectionProps } />
+    <>
+        {SECTIONS.map(props => 
+            <Section key={uuid()}>
+                {props.iconAlignment === 'left' && 
+                    <IconBox><Icon icon={props.icon} /></IconBox>}
+                <ListBox>
+                    <ServiceDescription>
+                        <ServiceTitle>{props.title}:</ServiceTitle> {props.subtitle}
+                    </ServiceDescription>
+                    <List>
+                        {props.services.map(service => 
+                            <ListItem key={uuid()}>{service}</ListItem>
+                        )}
+                    </List>
+                </ListBox>
+                {props.iconAlignment === 'right' && 
+                    <IconBox><Icon icon={props.icon} /></IconBox>}
+            </Section>
         )}
-    </Container>
+    </>
 );
 
 export default ServicesPage;
