@@ -1,7 +1,38 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { normalize } from 'styled-normalize';
+import type { AppProps } from 'next/app';
+import type { DefaultTheme } from 'styled-components';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import Navbar from 'components/Navbar';
+import Footer from 'components/Footer';
+
+const GlobalStyle = createGlobalStyle`
+    ${normalize}
+
+    body {
+        font-family: 'Playfair Display', serif;
+    }
+`;
+
+const theme: DefaultTheme = {
+    colors: {
+        lightGreen: '#EEF6EC',
+        darkBlue: '#346CAD',
+        darkGreen: '#3C7A5E'
+    }
 }
-export default MyApp
+
+const App = (props: AppProps) => {
+    const { Component, pageProps } = props;
+
+    return (
+        <ThemeProvider theme={theme}>
+            <GlobalStyle />
+            <Navbar />
+            <Component { ...pageProps } />
+            <Footer />
+        </ThemeProvider>
+    );
+}
+
+export default App;
