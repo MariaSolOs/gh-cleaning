@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
 const theme: DefaultTheme = {
     colors: {
         lightGreen: '#EEF6EC',
+        limeGreen: ' #85CD38',
         darkBlue: '#346CAD',
         darkGreen: '#3C7A5E'
     }

@@ -83,7 +83,6 @@ type ServiceSectionProps = {
     subtitle?: string;
     services: string[]; 
     icon: IconDefinition;
-    iconAlignment: 'left' | 'right';
 }
 
 const SECTIONS: ServiceSectionProps[] = [
@@ -101,8 +100,7 @@ const SECTIONS: ServiceSectionProps[] = [
             'Basement',
             'Front porch/balcon/terrace',
         ],
-        icon: faCloudSun,
-        iconAlignment: 'left'
+        icon: faCloudSun
     },
     {
         title: 'Whole house',
@@ -119,8 +117,7 @@ const SECTIONS: ServiceSectionProps[] = [
             'Clean power switches and sockets',
             'Clean glass, mirrors and lightning'
         ],
-        icon: faHome,
-        iconAlignment: 'right'
+        icon: faHome
     },
     {
         title: 'Deep cleaning',
@@ -137,8 +134,7 @@ const SECTIONS: ServiceSectionProps[] = [
             'Change/wash/dry/fold bed sheets and liners',
             'Clean windows interiors/exteriors, including sashes'
         ],
-        icon: faHouseUser,
-        iconAlignment: 'left'
+        icon: faHouseUser
     },
     {
         title: 'Kitchen',
@@ -156,8 +152,7 @@ const SECTIONS: ServiceSectionProps[] = [
             'Clean oven insides',
             'Dishes/sink load'
         ],
-        icon: faUtensils,
-        iconAlignment: 'right'
+        icon: faUtensils
     },
     {
         title: 'Bathroom',
@@ -167,8 +162,7 @@ const SECTIONS: ServiceSectionProps[] = [
             'Clean the walls and floors',
             'Wipe the mirrors and glass fixtures'
         ],
-        icon: faBath,
-        iconAlignment: 'left'
+        icon: faBath
     }, 
     {
         title: 'Bedroom',
@@ -178,31 +172,31 @@ const SECTIONS: ServiceSectionProps[] = [
             'Dust the furniture',
             'Dust reachable lamps and fans'
         ],
-        icon: faBed,
-        iconAlignment: 'right'
+        icon: faBed
     }
 ];
 
 const ServicesPage = () => (
     <>
-        {SECTIONS.map(props => 
-            <Section key={uuid()}>
-                {props.iconAlignment === 'left' && 
-                    <IconBox><Icon icon={props.icon} /></IconBox>}
-                <ListBox>
-                    <ServiceDescription>
-                        <ServiceTitle>{props.title}:</ServiceTitle> {props.subtitle}
-                    </ServiceDescription>
-                    <List>
-                        {props.services.map(service => 
-                            <ListItem key={uuid()}>{service}</ListItem>
-                        )}
-                    </List>
-                </ListBox>
-                {props.iconAlignment === 'right' && 
-                    <IconBox><Icon icon={props.icon} /></IconBox>}
-            </Section>
-        )}
+        {SECTIONS.map((props, i) => {
+            const alignLeft = i % 2 === 0;
+            return (
+                <Section key={uuid()}>
+                    {alignLeft && <IconBox><Icon icon={props.icon} /></IconBox>}
+                    <ListBox>
+                        <ServiceDescription>
+                            <ServiceTitle>{props.title}:</ServiceTitle> {props.subtitle}
+                        </ServiceDescription>
+                        <List>
+                            {props.services.map(service => 
+                                <ListItem key={uuid()}>{service}</ListItem>
+                            )}
+                        </List>
+                    </ListBox>
+                    {!alignLeft && <IconBox><Icon icon={props.icon} /></IconBox>}
+                </Section>
+            );
+        })}
     </>
 );
 
