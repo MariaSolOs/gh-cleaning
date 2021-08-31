@@ -87,7 +87,7 @@ type ServiceSectionProps = {
 
 const SECTIONS: ServiceSectionProps[] = [
     {
-        title: 'Extra services',
+        title: 'Our services',
         subtitle: 'We offer a wide range of services to satisfy every need.',
         services: [
             'Whole house',

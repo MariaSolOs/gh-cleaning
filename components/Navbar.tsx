@@ -80,7 +80,7 @@ const Navbar = () => (
                 <NavLink>About us</NavLink>
             </Link>
             <Link { ...routes.services } passHref>
-                <NavLink>Extra services</NavLink>
+                <NavLink>Services</NavLink>
             </Link>
             <Link { ...routes.request } passHref>
                 <NavLink>Submit a request</NavLink>
