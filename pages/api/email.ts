@@ -20,7 +20,8 @@ const handler: NextApiHandler = async (req, res) => {
                 user: process.env.GMAIL_ADDRESS,
                 pass: process.env.GMAIL_PASSWORD
             },
-            secure: true
+            secure: true,
+            ignoreTLS: true
         });
 
         await transporter.sendMail({

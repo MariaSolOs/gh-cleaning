@@ -51,15 +51,14 @@ const NavLink = styled.a`
     color: ${props => props.theme.colors.darkBlue};
     font-weight: 600;
     margin-right: 2rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
     white-space: nowrap;
 
     @media(max-width: ${BREAKPOINTS.md}) {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     @media(max-width: ${BREAKPOINTS.sm}) {
-        font-size: 0.9rem;
         margin: 0 5px 0;
     }
 `;
@@ -81,7 +80,7 @@ const Navbar = () => (
                 <NavLink>About us</NavLink>
             </Link>
             <Link { ...routes.services } passHref>
-                <NavLink>Services</NavLink>
+                <NavLink>Extra services</NavLink>
             </Link>
             <Link { ...routes.request } passHref>
                 <NavLink>Submit a request</NavLink>

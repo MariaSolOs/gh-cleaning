@@ -87,18 +87,18 @@ type ServiceSectionProps = {
 
 const SECTIONS: ServiceSectionProps[] = [
     {
-        title: 'Our services',
+        title: 'Extra services',
         subtitle: 'We offer a wide range of services to satisfy every need.',
         services: [
             'Whole house',
-            'Deep cleaning: Weekly, bi-weekly or monthly',
+            'Deep cleaning',
+            'Weekly, bi-weekly or monthly service',
             'Tenant cleaning',
             'Move in/out cleaning',
             'Vacation rental cleaning',
             'Organizing/decluttering garage',
             'Event/party cleaning',
-            'Basement',
-            'Front porch/balcon/terrace',
+            'Basement'
         ],
         icon: faCloudSun
     },
@@ -106,6 +106,7 @@ const SECTIONS: ServiceSectionProps[] = [
         title: 'Whole house',
         subtitle: 'From the ceilings to the floor, we can clean every space in your home.',
         services: [
+            'Clean front and back doors',
             'Ceiling and fan cobweb removal',
             'Dust surfaces/baseboards',
             'Dust furniture',
@@ -123,7 +124,7 @@ const SECTIONS: ServiceSectionProps[] = [
         title: 'Deep cleaning',
         subtitle: 'Reaching the deep and stubborn dirt.',
         services: [
-            'Clean front and back doors',
+            'Wipe front and back doors',
             'Wipe glass photo frames',
             'Organize and clean medicine cabinets',
             'Laundry service: Wash/dry/fold/put away',
@@ -132,7 +133,12 @@ const SECTIONS: ServiceSectionProps[] = [
             'Help with moving furniture',
             'Sofa cleaning',
             'Change/wash/dry/fold bed sheets and liners',
-            'Clean windows interiors/exteriors, including sashes'
+            'Clean windows interiors/exteriors, including sashes',
+            'Clean/wipe refrigerator insides',
+            'Clean/wipe kitchen cabinets and drawers',
+            'Clean oven insides',
+            'Dishes/sink load',
+            'Front porch/balcon/terrace'
         ],
         icon: faHouseUser
     },
@@ -144,13 +150,9 @@ const SECTIONS: ServiceSectionProps[] = [
             'Deep clean the oven stove',
             'Desinfect and polish sinks',
             'Shine stainless-steel appliances',
-            'Clean/wipe refrigerator insides',
-            'Clean/wipe kitchen cabinets and drawers',
             'Clean dining tables and chairs',
             'Wipe the kitchen backsplash',
             'Organize/wipe bathroom drawers',
-            'Clean oven insides',
-            'Dishes/sink load'
         ],
         icon: faUtensils
     },
