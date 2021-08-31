@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { BREAKPOINTS } from 'global-constants';
 
 import Image from 'next/image';
+import homeImg from 'public/images/home-main.jpg';
 
 const Hero = styled.div`
     display: flex;
@@ -36,16 +37,15 @@ const Subtitle = styled.h2`
     }
 `;
 
-const IMAGE_URL = 'https://images.unsplash.com/photo-1587767379172-4d3c6759572a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=943&q=80';
-
 const HomePage = () => (
     <Hero>
         <ImageWrapper>
             <Image
-            src={IMAGE_URL}
+            src={homeImg}
             alt="G+H Cleaning"
             layout="fill"
-            objectFit="cover" />
+            objectFit="cover"
+            placeholder="blur" />
         </ImageWrapper>
         <div>
             <Title>G+H Cleaning</Title>

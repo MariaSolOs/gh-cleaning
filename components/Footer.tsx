@@ -18,7 +18,7 @@ const Bar = styled.footer`
 
     @media(max-width: ${BREAKPOINTS.md}) {
         flex-direction: column;
-        padding: 0;
+        padding: 0 0 20px;
     }
 `;
 
@@ -114,7 +114,8 @@ const Footer = () => (
             <Image
             src={brandLogo}
             alt="G+H Cleaning"
-            layout="fill" />
+            layout="fill"
+            priority />
         </Brand>
     </Bar>
 );
