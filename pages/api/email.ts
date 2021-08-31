@@ -14,14 +14,14 @@ const handler: NextApiHandler = async (req, res) => {
         }
 
         const transporter = nodemailer.createTransport({
-            port: 465,
+            port: 587,
             host: 'smtp.gmail.com',
             auth: {
                 user: process.env.GMAIL_ADDRESS,
                 pass: process.env.GMAIL_PASSWORD
             },
-            secure: true,
-            ignoreTLS: true
+            secure: false,
+            ignoreTLS: false
         });
 
         await transporter.sendMail({
