@@ -6,6 +6,7 @@ import { BREAKPOINTS } from 'global-constants';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
+import { faPhoneAlt } from '@fortawesome/free-solid-svg-icons/faPhoneAlt';
 import brandLogo from 'public/images/brand-clear.png';
 
 const Bar = styled.footer`
@@ -108,6 +109,10 @@ const Footer = () => (
                 <Link href="mailto:ghc.ecoclean@gmail.com">
                     ghc.ecoclean@gmail.com
                 </Link>
+            </p>
+            <p>
+                <Icon icon={faPhoneAlt} />
+                631 3945727
             </p>
         </Section>
         <Brand>
