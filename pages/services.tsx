@@ -138,7 +138,8 @@ const SECTIONS: ServiceSectionProps[] = [
             'Clean/wipe kitchen cabinets and drawers',
             'Clean oven insides',
             'Dishes/sink load',
-            'Front porch/balcon/terrace'
+            'Front porch/balcon/terrace',
+            'Organize/wipe bathroom drawers'
         ],
         icon: faHouseUser
     },
@@ -151,8 +152,7 @@ const SECTIONS: ServiceSectionProps[] = [
             'Desinfect and polish sinks',
             'Shine stainless-steel appliances',
             'Clean dining tables and chairs',
-            'Wipe the kitchen backsplash',
-            'Organize/wipe bathroom drawers',
+            'Wipe the kitchen backsplash'
         ],
         icon: faUtensils
     },
